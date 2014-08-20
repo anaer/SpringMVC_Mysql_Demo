@@ -13,7 +13,8 @@
 		<init-param>
 			<!-- 这个param-name必须是contextConfigLocation -->
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+			<!-- 配置classpath:applicationContext.xml等同于/WEB-INF/classes/applicationContext.xml -->
+			<param-value>classpath:applicationContext.xml</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
@@ -35,7 +36,8 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!-- webapp 为根目录 -->
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
